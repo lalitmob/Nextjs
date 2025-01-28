@@ -3,6 +3,7 @@ import Image from "next/image";
 import { free_sample as data, uiConstant } from "@/constant";
 import Landing from "../components/Landing";
 import Features from "../components/Features";
+import Authenticationpage from "../components/Authenticationpage";
 const page = () => {
   return (
     <div className="w-full ">
@@ -44,6 +45,7 @@ const page = () => {
         </div>
       </div>
       <Features/>
+      <Authenticationpage/>
     </div>
   );
 };

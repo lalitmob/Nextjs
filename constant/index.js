@@ -10,6 +10,20 @@ export const uiConstant = {
   buttonName: "Create an Account",
   feature_bg : "/icons/feature.png"
 };
+export const authentication_ui ={
+   sign : "sign up",
+   login : "login",
+   placeholders : {
+     email : "Your email",
+     password : "Your password",
+   },
+   ui_button_name : {
+    createAccount : "Create an Account",
+    next : "Continue",
+    signin_github : "Login via Github",
+    signup_github : "Signup via Github"
+   }
+}
 export const homepage_content = [
   {
     heading: "Startup 1",
@@ -61,6 +75,8 @@ export const Features_content = [
       image: "/images/macbook.png",
       heading: "We Create Something New",
       para: "We have created a new product that will help designers, developers, and companies create websites for their startups quickly and easily.",
+      contenthead1 :"30 New feature pages",
+      contenthead2 :"Useful Symbol Components",
       content1: "Startup Framework contains components and complex blocks which can be customized easily.",
       content2: "Samples will show you how to play around with components effortlessly.",
     },
@@ -68,6 +84,8 @@ export const Features_content = [
       image: "/images/iphone.png",
       heading: "Innovate with Technology",
       para: "Revolutionize the way you approach design and development with our state-of-the-art tools.",
+      contenthead1 :"30 New feature pages",
+      contenthead2 :"Useful Symbol Components",
       content1: "Empower your projects with cutting-edge features and user-friendly designs.",
       content2: "Stay ahead of the competition with seamless workflows and robust capabilities.",
     },
@@ -75,6 +93,8 @@ export const Features_content = [
       image: "/images/tablet.png",
       heading: "Streamline Your Workflow",
       para: "Our product makes it easier than ever to streamline your workflow and boost productivity.",
+      contenthead1 :"30 New feature pages",
+      contenthead2 :"Useful Symbol Components",
       content1: "With intuitive features and smart integrations, get more done in less time.",
       content2: "Start building faster and focus on what truly matters.",
     },
@@ -82,6 +102,8 @@ export const Features_content = [
       image: "/images/teamwork.png",
       heading: "Collaborate and Succeed",
       para: "Our tools are built to foster seamless collaboration and empower teams to achieve their goals.",
+      contenthead1 :"30 New feature pages",
+      contenthead2 :"Useful Symbol Components",
       content1: "Share ideas and work together effortlessly in real-time.",
       content2: "Accelerate progress with smarter tools for smarter teams.",
     },
@@ -89,6 +111,8 @@ export const Features_content = [
       image: "/images/analytics.png",
       heading: "Data-Driven Decisions",
       para: "Gain insights and make informed decisions with our powerful analytics tools.",
+      contenthead1 :"30 New feature pages",
+      contenthead2 :"Useful Symbol Components",
       content1: "Understand your audience and fine-tune your strategies for maximum impact.",
       content2: "Turn data into actionable steps with ease.",
     },
@@ -96,8 +120,14 @@ export const Features_content = [
       image: "/images/startup.png",
       heading: "Your Startup, Supercharged",
       para: "Jumpstart your startup journey with tools designed to fuel innovation and growth.",
+      contenthead1 :"30 New feature pages",
+      contenthead2 :"Useful Symbol Components",
       content1: "From idea to execution, we've got you covered every step of the way.",
       content2: "Build and scale your business with confidence.",
     },
   ];
+  export const AuthenticationPageContent = {
+    h_content : "We solve digital problems with an outstanding creative flare",
+    para :"We have created a new product that will help designers, developers and companies create websites for their startups quickly and easily."
+  }
   
