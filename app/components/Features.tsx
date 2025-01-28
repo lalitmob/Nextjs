@@ -31,10 +31,12 @@ const Features = () => {
             </div>
             <div className="flex gap-10">
               <div className="flex flex-col gap-3">
+              <i className='bx text-4xl bxs-package' ></i>
                 <h4 className="text-xl font-semibold ">{d[idx].contenthead1}</h4>
                 <p>{d[idx].content1}</p>
               </div>
               <div className="flex flex-col gap-3">
+              <i className='bx text-4xl bx-diamond'></i>
                 <h4 className="text-xl font-semibold ">{d[idx].contenthead2}</h4>
                 <p>{d[idx].content2}</p>
               </div>

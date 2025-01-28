@@ -41,7 +41,7 @@ const Landing = () => {
                   { "bg-green-400": isActive, "bg-gray-200": !isActive }
                 )}
               >
-                <i className="bx bx-circle text-white-5"></i>
+                <i className="bx bx-circle hover:cursor-pointer text-white-5 text-sm"></i>
               </div>
           );
         })}

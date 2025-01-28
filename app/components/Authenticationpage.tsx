@@ -5,8 +5,8 @@ import {
   AuthenticationPageContent,
   free_sample,
 } from "@/constant";
-import Signup from "./Signup";
-import Signin from "./Signin";
+import Signup from "./auth/Signup";
+import Signin from "./auth/Signin";
 const Authenticationpage = () => {
     const [selectauthcomponent, setSelectauthcomponent] = useState<boolean>(false)
   return (
@@ -21,20 +21,20 @@ const Authenticationpage = () => {
       </div>
       <div className="w-[40%] absolute top-[30%] ml-[10%] flex  text-white-1 ">
         <div className="flex flex-col gap-5">
-          <h1 className="font-bold text-6xl">
+          <h1 className="font-bold text-6xl capitalize">
             {AuthenticationPageContent.h_content}
           </h1>
           <p className="">{AuthenticationPageContent.para}</p>
         </div>
       </div>
       <div  className="absolute right-[15%] top-[20%] w-[500px] h-[650px] bg-white-1 text-black-1 py-2 rounded-xl shadow-lg shadow-black-1 ">
-        <div className="flex justify-between  h-[10%] border-b-2  w-full">
-          <div onClick={()=>setSelectauthcomponent(false)} className={`flex items-center justify-center w-[50%] border-b-2 ${selectauthcomponent?'': 'border-black-1'}`}>
+        <div className="flex justify-between  h-[10%]   w-full">
+          <div onClick={()=>setSelectauthcomponent(false)} className={`flex items-center justify-center w-[50%] border-b-2 ${selectauthcomponent?'': 'border-green-700'}`}>
             <button className="text-xl capitalize ">
               {authentication_ui.sign}
             </button>
           </div>
-          <div onClick={()=>setSelectauthcomponent(true)} className={`flex items-center justify-center w-[50%] border-b-2 ${selectauthcomponent?'border-black-1': ''}`}>
+          <div onClick={()=>setSelectauthcomponent(true)} className={`flex items-center justify-center w-[50%] border-b-2 ${selectauthcomponent?'border-green-700': ''}`}>
             <button className="text-xl capitalize ">
               {authentication_ui.login}
             </button>
