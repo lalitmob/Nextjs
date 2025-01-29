@@ -1,6 +1,7 @@
 import { contact_page as data } from "@/constant";
 import Image from "next/image";
 import React from "react";
+import Contactform from "./auth/Contactform";
 
 const Contact = () => {
   return (
@@ -26,6 +27,9 @@ const Contact = () => {
             ))}
           </div>
         </div>
+      </div>
+      <div>
+        <Contactform/>
       </div>
     </div>
   );

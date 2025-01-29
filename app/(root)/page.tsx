@@ -8,7 +8,7 @@ import Clientpage from "../components/Clientpage";
 import Contact from "../components/Contact";
 const page = () => {
   return (
-    <div className="w-full ">
+    <div className="w-full overflow-hidden">
       <div>
         <div className="w-full bg-purple-600 h-screen relative z-0">
           <Image
@@ -21,13 +21,13 @@ const page = () => {
         <div className="top-5 w-full absolute z-10">
           <Landing />
           <div className="flex mt-8 justify-center">
-            <button className="border py-4 px-5 text-xl rounded-2xl bg-blue-500 transition-all duration-300 hover:text-black-4 hover:bg-green-300">
+            <button className="border py-3 px-3 md:px-5 md:text-xl rounded-2xl bg-blue-500 transition-all duration-300 hover:text-black-4 hover:bg-green-300">
               {uiConstant.buttonName}
             </button>
           </div>
         </div>
       </div>
-      <div className="relative w-full bg-blue-950 h-[400px]">
+      <div className="relative flex justify-center w-full bg-blue-950 h-[400px]">
         <div>
           <Image
             src={data.bg_image}
@@ -36,12 +36,12 @@ const page = () => {
             className="object-cover"
           />
         </div>
-        <div className="flex flex-col w-full h-full justify-center items-center">
+        <div className="flex flex-col w-[90%] md:w-full h-full justify-center items-center px-6 sm:px-8 md:px-6 lg:px-4">
           {
-            <div className="w-[600px] flex flex-col gap-5 text-white-1 absolute text-center">
-              <h3 className="font-semibold text-xl">{data.heading}</h3>
-              <h1  className="text-3xl font-bold">{data.subHeading}</h1>
-              <p className="text-xl pb-8 ">{data.paragraph}</p>
+            <div className=" flex flex-col gap-5 text-white-1 absolute text-center px-6 sm:px-8 md:px-6 lg:px-4">
+              <h3 className="font-semibold text-lg md:text-xl">{data.heading}</h3>
+              <h1  className="text-xl md:text-3xl font-bold">{data.subHeading}</h1>
+              <p className="text-lg md:text-xl pb-8 ">{data.paragraph}</p>
             </div>
           }
         </div>

@@ -164,10 +164,10 @@ export const client_page_data = [
   },
 ];
 export const contact_page = {
-  bg_image : "/images/contactbg.png",
+  bg_image: "/images/contactbg.png",
   heading: "Let’s Keep in Touch",
   para: "We have created a new product that will help designers, developers and companies create websites for their startups quickly and easily.",
-  contactInfo : [
+  contactInfo: [
     {
       info: "+1 555 505 5050",
       icon: "bx bx-phone",
@@ -180,27 +180,31 @@ export const contact_page = {
       info: "San Francisco, CA 560 Bush St & 20th Ave, Apt 5 San Francisco, 230909",
       icon: "bx bx-building-house",
     },
-  ]
-  
+  ],
 };
 export const contact_ui = {
-  fields: [
-    {
+  fields: {
+    name: {
       label: "Your Name",
       placeholder: "Enter your name",
       type: "text",
     },
-    {
+    email: {
       label: "Your Email",
       placeholder: "Enter your email",
       type: "email",
     },
-    {
+    subject: {
+      label: "Subject",
+      type: "select",
+      options: ["General Inquiry", "Support", "Feedback", "Other"],
+    },
+    message: {
       label: "Your Message",
       placeholder: "Enter your message",
       type: "textarea",
     },
-  ],
+  },
   ui: {
     checkbox: {
       label: "Send me a copy",

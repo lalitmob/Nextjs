@@ -10,7 +10,7 @@ import Signin from "./auth/Signin";
 const Authenticationpage = () => {
     const [selectauthcomponent, setSelectauthcomponent] = useState<boolean>(false)
   return (
-    <div className="relative h-screen w-full">
+    <div className="relative h-screen w-full ">
       <div className="bg-blue-500 w-full h-full">
         <Image
           src={free_sample.bg_image}

@@ -3,17 +3,16 @@ import { navigational_names } from "../../constant/index";
 const Navbar = () => {
   const [displayMenu, setDisplayMenu] = useState<boolean>(false);
   return (
-    <div className="">
-      <div className=" md:hidden absolute z-20 p-5">
+    <div >
+     {displayMenu&&<div className="absolute w-full h-screen z-30 md:z-0  bg-gray-950/70 overflow-hidden">
+
+     </div>}
+      <div className=" md:hidden absolute z-40 p-5">
         {displayMenu ? (
-          <i
-            onClick={() => setDisplayMenu(false)}
-            className="bx bx-caret-right text-2xl transition-all duration-300"
-          ></i>
-        ) : (
+         
           <div className="flex flex-col justify-start items-start gap-3 text-white-1">
             <i
-              onClick={() => setDisplayMenu(true)}
+              onClick={() => setDisplayMenu(false)}
               className="bx bx-caret-down text-2xl text-black-2 transition-all duration-300"
             />
             {navigational_names.map((field, id) => (
@@ -25,6 +24,11 @@ const Navbar = () => {
               </button>
             ))}
           </div>
+        ) : (
+          <i
+          onClick={() => setDisplayMenu(true)}
+          className="bx bx-caret-right text-2xl transition-all duration-300"
+        ></i>
         )}
       </div>
 
