@@ -5,8 +5,8 @@ import {
   AuthenticationPageContent,
   free_sample,
 } from "@/constant";
-import Signup from "./auth/Signup";
-import Signin from "./auth/Signin";
+import Signup from "./subcomponent/Signup";
+import Signin from "./subcomponent/Signin";
 const Authenticationpage = () => {
     const [selectauthcomponent, setSelectauthcomponent] = useState<boolean>(false)
   return (

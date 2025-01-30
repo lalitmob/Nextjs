@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Practice project",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "author": "lalit singh bhadauria",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

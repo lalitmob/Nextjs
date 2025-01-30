@@ -7,6 +7,8 @@ export const navigational_names = [
 ];
 export const uiConstant = {
   background_image: "/images/background.png",
+  bg2 : "/icons/bg2.png",
+  bg3 : "/icons/bg3.png",
   buttonName: "Create an Account",
   feature_bg: "/icons/feature.png",
 };
@@ -213,4 +215,67 @@ export const contact_ui = {
       text: "Send",
     },
   },
+};
+export const plans_page = {
+  content1: {
+    heading: "Starter",
+    price: "$9.99",
+
+    constant_data: [
+      "2 GB of space",
+      "14 days of backups",
+      "Social integrations",
+      "Client billing",
+    ],
+    gray_part: [
+      "Remote access",
+      "Custom domain",
+      "24 hours support",
+      "Admin tools",
+      "Collaboration tools",
+      "User management",
+    ],
+  },
+  content2: {
+    heading: "Professional",
+    price: "$19.99",
+
+    constant_data: [
+      "2 GB of space",
+      "14 days of backups",
+      "Social integrations",
+      "Client billing",
+      "Remote access",
+      "Custom domain",
+      "24 hours support",
+      
+    ],
+    gray_part: [
+      "Admin tools",
+      "Collaboration tools",
+      "User management",
+    ],
+  },
+  content3: {
+    heading: "Team",
+    price: "$29.99",
+
+    constant_data: [
+      "2 GB of space",
+      "14 days of backups",
+      "Social integrations",
+      "Client billing",
+      "Remote access",
+      "Custom domain",
+      "24 hours support",
+      "Admin tools",
+      "Collaboration tools",
+      "User management",
+    ],
+  },
+  sub_head_data:
+    "Startup Framework is free forever — you only pay for custom domain hosting or to export your site.",
+  button: "Get started",
+  bg_image: "/images/Mask.png",
+  heading: "Plans & Pricing",
 };

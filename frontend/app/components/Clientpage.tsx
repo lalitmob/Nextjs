@@ -4,8 +4,7 @@ import React from "react";
 
 const Clientpage = () => {
   return (
-    <div className="relative flex justify-center items-center h-screen w-full">
-      <div className="relative w-full h-screen bg-blue-700"></div>
+    <div className="relative flex justify-center items-center bg-blue-700 h-screen w-full">
       <div className="absolute top-[20%] px-20 text-white-1">
         <h1 className="text-6xl font-bold mb-8 text-white-5">Our happy clients</h1>
         <div className="flex flex-wrap   w-[1100px] gap-8">
