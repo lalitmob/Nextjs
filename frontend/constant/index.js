@@ -276,6 +276,12 @@ export const plans_page = {
 };
 export const signupModel = {
   heading: "Sign Up",
+  comment: "Already have an account",
+  google: {
+    comment : "sign up with google",
+    icon : "/icons/google.png"
+  },
+
   fields: [
     {
       name: "firstName",
@@ -288,41 +294,36 @@ export const signupModel = {
       label: "Last Name",
       type: "text",
       placeholder: "Enter your last name",
-     
     },
     {
       name: "email",
       label: "Email",
       type: "email",
       placeholder: "Enter your email address",
-      
     },
-    {
-      name: "birthDate",
-      label: "Birth Date",
-      type: "date",
-      placeholder: "Enter your birth date",
-    },
+    // {
+    //   name: "birthDate",
+    //   label: "Birth Date",
+    //   type: "date",
+    //   placeholder: "Enter your birth date",
+    // },
     {
       name: "phoneNumber",
       label: "Phone Number",
       type: "tel",
       placeholder: "Enter your phone number",
-      
     },
     {
       name: "password",
       label: "Password",
       type: "password",
       placeholder: "Enter your password",
-      
     },
     {
       name: "confirmPassword",
       label: "Confirm Password",
       type: "password",
       placeholder: "Re-enter your password",
-      
     },
   ],
   company: [
@@ -331,14 +332,12 @@ export const signupModel = {
       label: "Company Name",
       type: "text",
       placeholder: "Enter your company name",
-      
     },
     {
       name: "companyId",
       label: "Company ID",
       type: "text",
       placeholder: "Enter your company ID",
-      
     },
   ],
 };
