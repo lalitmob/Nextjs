@@ -7,8 +7,8 @@ export const navigational_names = [
 ];
 export const uiConstant = {
   background_image: "/images/background.png",
-  bg2 : "/icons/bg2.png",
-  bg3 : "/icons/bg3.png",
+  bg2: "/icons/bg2.png",
+  bg3: "/icons/bg3.png",
   buttonName: "Create an Account",
   feature_bg: "/icons/feature.png",
 };
@@ -248,13 +248,8 @@ export const plans_page = {
       "Remote access",
       "Custom domain",
       "24 hours support",
-      
     ],
-    gray_part: [
-      "Admin tools",
-      "Collaboration tools",
-      "User management",
-    ],
+    gray_part: ["Admin tools", "Collaboration tools", "User management"],
   },
   content3: {
     heading: "Team",
@@ -278,4 +273,72 @@ export const plans_page = {
   button: "Get started",
   bg_image: "/images/Mask.png",
   heading: "Plans & Pricing",
+};
+export const signupModel = {
+  heading: "Sign Up",
+  fields: [
+    {
+      name: "firstName",
+      label: "First Name",
+      type: "text",
+      placeholder: "Enter your first name",
+    },
+    {
+      name: "lastName",
+      label: "Last Name",
+      type: "text",
+      placeholder: "Enter your last name",
+     
+    },
+    {
+      name: "email",
+      label: "Email",
+      type: "email",
+      placeholder: "Enter your email address",
+      
+    },
+    {
+      name: "birthDate",
+      label: "Birth Date",
+      type: "date",
+      placeholder: "Enter your birth date",
+    },
+    {
+      name: "phoneNumber",
+      label: "Phone Number",
+      type: "tel",
+      placeholder: "Enter your phone number",
+      
+    },
+    {
+      name: "password",
+      label: "Password",
+      type: "password",
+      placeholder: "Enter your password",
+      
+    },
+    {
+      name: "confirmPassword",
+      label: "Confirm Password",
+      type: "password",
+      placeholder: "Re-enter your password",
+      
+    },
+  ],
+  company: [
+    {
+      name: "companyName",
+      label: "Company Name",
+      type: "text",
+      placeholder: "Enter your company name",
+      
+    },
+    {
+      name: "companyId",
+      label: "Company ID",
+      type: "text",
+      placeholder: "Enter your company ID",
+      
+    },
+  ],
 };

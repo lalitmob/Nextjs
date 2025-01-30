@@ -1,8 +1,9 @@
 import { cn } from "@/lib/utils";
 import { homepage_content as data } from "@/constant";
+import { Dispatch, SetStateAction } from "react";
 interface props {
   idx: number;
-  setIdx: React.FC;
+  setIdx: Dispatch<SetStateAction<number>>;
 }
 const Landing : React.FC<props> = ({ idx, setIdx }) => {
   return (

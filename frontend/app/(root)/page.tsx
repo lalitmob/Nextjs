@@ -8,7 +8,7 @@ import Clientpage from "../components/Clientpage";
 import Contact from "../components/Contact";
 import Plans from "../components/Plans";
 import { useState } from "react";
-const page :React.FC = () => {
+const Page :React.FC = () => {
   const [idx, setIdx] = useState<number>(0);
   return (
     <div className="w-full overflow-hidden">
@@ -58,4 +58,4 @@ const page :React.FC = () => {
   );
 };
 
-export default page;
+export default Page;
