@@ -36,9 +36,9 @@ const Page: React.FC = () => {
       <div>
         <div className="w-full bg-purple-600 h-screen relative z-0">
           <Image
-            src={uiConstant.background_image}
+            src={uiConstant.background_image[idx]}
             className="object-cover"
-            alt={uiConstant.background_image}
+            alt={uiConstant.background_image[idx]}
             fill
           />
         </div>

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: "Next practice project",
   icons : {
     icon : "/icons/images.png"
-  }
+  },
 };
 
 export default function RootLayout({

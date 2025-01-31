@@ -6,9 +6,15 @@ export const navigational_names = [
   "contact",
 ];
 export const uiConstant = {
-  background_image: "/images/background.png",
-  bg2: "/icons/bg2.png",
-  bg3: "/icons/bg3.png",
+  background_image: [
+    "/images/background.png",
+    "/icons/bg2.jpg",
+    "/icons/bg3.jpg",
+    "/icons/bg4.jpg",
+    "/icons/bg5.jpg",
+    "/icons/bg6.jpg"
+  ],
+
   buttonName: "Create an Account",
   feature_bg: "/icons/feature.png",
 };
@@ -276,7 +282,7 @@ export const plans_page = {
 };
 export const model_ui = {
   sign_up: { heading: "Sign Up", comment: "Already have an account" },
-  login: {heading: "Login", comment: "Sign up for new account"},
+  login: { heading: "Login", comment: "Sign up for new account" },
   google: {
     comment: "continue with google",
     icon: "/icons/google.png",

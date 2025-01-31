@@ -8,7 +8,7 @@ interface cardProps {
 }
 const Card: React.FC<cardProps> = ({ heading, price, constant_data, gray }) => {
   return (
-    <div className="flex flex-col  border border-g w-[350px] rounded-xl shadow-sm shadow-black-1 h-[550px] pl-14 pt-11 gap-5">
+    <div className="flex flex-col  border border-gray-400 w-[350px] rounded-xl shadow-sm shadow-black-1 h-[550px] pl-14 pt-11 gap-5">
       <h3 className="text-lg text-gray-300">{heading}</h3>
       <h1 className="text-xl font-semibold">{price}</h1>
       <div className="mb-5">
