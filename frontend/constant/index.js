@@ -2,7 +2,7 @@ export const navigational_names = [
   "home",
   "features",
   "pricing",
-  "our team",
+  "ourClient",
   "contact",
 ];
 export const uiConstant = {
@@ -274,15 +274,15 @@ export const plans_page = {
   bg_image: "/images/Mask.png",
   heading: "Plans & Pricing",
 };
-export const signupModel = {
-  heading: "Sign Up",
-  comment: "Already have an account",
+export const model_ui = {
+  sign_up: { heading: "Sign Up", comment: "Already have an account" },
+  login: {heading: "Login", comment: "Sign up for new account"},
   google: {
-    comment : "sign up with google",
-    icon : "/icons/google.png"
+    comment: "continue with google",
+    icon: "/icons/google.png",
   },
 
-  fields: [
+  signup_fields: [
     {
       name: "firstName",
       label: "First Name",
@@ -301,12 +301,7 @@ export const signupModel = {
       type: "email",
       placeholder: "Enter your email address",
     },
-    // {
-    //   name: "birthDate",
-    //   label: "Birth Date",
-    //   type: "date",
-    //   placeholder: "Enter your birth date",
-    // },
+
     {
       name: "phoneNumber",
       label: "Phone Number",
@@ -324,6 +319,20 @@ export const signupModel = {
       label: "Confirm Password",
       type: "password",
       placeholder: "Re-enter your password",
+    },
+  ],
+  login_fields: [
+    {
+      name: "email",
+      label: "Email",
+      type: "email",
+      placeholder: "Enter your email address",
+    },
+    {
+      name: "password",
+      label: "Password",
+      type: "password",
+      placeholder: "Enter your password",
     },
   ],
   company: [

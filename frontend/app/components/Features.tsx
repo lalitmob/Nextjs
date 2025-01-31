@@ -1,11 +1,13 @@
 import { Features_content as d, uiConstant } from "@/constant";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { modelContext } from "@/context/Modelprovider";
 const Features = () => {
+  const {sectionRef} = useContext(modelContext)!
   const [idx, setIdx] = useState(0);
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div ref={sectionRef.features} data-name = "features" className="relative w-full h-screen overflow-hidden">
       <div className="w-full bg-purple-700 h-full ">
         <Image
           src={uiConstant.feature_bg}

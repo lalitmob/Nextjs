@@ -1,10 +1,12 @@
 import { client_page_data as client } from "@/constant";
+import { modelContext } from "@/context/Modelprovider";
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
 
 const Clientpage = () => {
+  const {sectionRef} = useContext(modelContext)!
   return (
-    <div className="relative flex justify-center items-center bg-blue-700 h-screen w-full">
+    <div ref = {sectionRef.ourClient} data-name = "ourClient" className="relative flex justify-center items-center bg-blue-700 h-screen w-full">
       <div className="absolute top-[20%] px-20 text-white-1">
         <h1 className="text-6xl font-bold mb-8 text-white-5">Our happy clients</h1>
         <div className="flex flex-wrap   w-[1100px] gap-8">

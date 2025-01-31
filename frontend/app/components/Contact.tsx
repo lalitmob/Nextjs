@@ -1,11 +1,13 @@
 import { contact_page as data } from "@/constant";
 import Image from "next/image";
-import React from "react";
+import React,{useContext} from "react";
 import Contactform from "./subcomponent/Contactform";
+import { modelContext } from "@/context/Modelprovider";
 
-const Contact = () => {
+const Contact : React.FC= () => {
+  const { sectionRef } = useContext(modelContext)!;
   return (
-    <div className="relative w-full h-screen">
+    <div ref = {sectionRef.contact} data-name="contact" className="relative w-full h-screen">
       <div className="bg-blue-600 w-full h-screen">
         <Image
           src={data.bg_image}

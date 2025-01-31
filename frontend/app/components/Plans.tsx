@@ -1,10 +1,12 @@
 import Image from "next/image";
-import React from "react";
+import React,{useContext} from "react";
 import Card from "./subcomponent/Card";
 import { plans_page } from "@/constant/index.js";
+import { modelContext } from "@/context/Modelprovider";
 const Plans : React.FC = () => {
+   const { sectionRef } = useContext(modelContext)!;
   return (
-    <div className="relative w-full h-screen">
+    <div ref={sectionRef.pricing} data-name = "pricing" className="relative w-full h-screen">
       <div className="w-full h-full">
         <Image
           src={plans_page.bg_image}

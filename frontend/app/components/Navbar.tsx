@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { navigational_names } from "../../constant/index";
+import { modelContext } from "@/context/Modelprovider";
 const Navbar = () => {
   const [displayMenu, setDisplayMenu] = useState<boolean>(false);
-  return (
-    <div >
-     {displayMenu&&<div className="absolute w-full h-screen z-30 md:z-0  bg-gray-950/70 overflow-hidden">
+  const context = useContext(modelContext);
 
-     </div>}
+  if (!context) {
+    return null;
+  }
+
+  const { handlescroll } = context;
+  return (
+    <div>
+      {displayMenu && (
+        <div className="absolute w-full h-screen z-30 md:z-0  bg-gray-950/70 overflow-hidden"></div>
+      )}
       <div className=" md:hidden absolute z-40 p-5">
         {displayMenu ? (
-         
           <div className="flex flex-col justify-start items-start gap-3 text-white-1">
             <i
               onClick={() => setDisplayMenu(false)}
@@ -26,9 +33,9 @@ const Navbar = () => {
           </div>
         ) : (
           <i
-          onClick={() => setDisplayMenu(true)}
-          className="bx bx-caret-right text-2xl transition-all duration-300"
-        ></i>
+            onClick={() => setDisplayMenu(true)}
+            className="bx bx-caret-right text-2xl transition-all duration-300"
+          ></i>
         )}
       </div>
 
@@ -36,6 +43,7 @@ const Navbar = () => {
         <div className="flex justify-center w-full gap-8">
           {navigational_names.map((field, id) => (
             <button
+              onClick={() => handlescroll(field )}
               className="capitalize transition-all duration-500 hover:text-orange-1 text-white-1"
               key={id}
             >
