@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
+import jwt from "jsonwebtoken";
 import validator from "express-validator";
 import { db_comment } from "../../constants/comments";
+import bcrypt from "bcryptjs";
 const userSchema = new mongoose.Schema({
   fullName: {
     firstName: {
@@ -30,8 +32,7 @@ const userSchema = new mongoose.Schema({
   },
   phone: {
     type: Number,
-    require : true,
-
+    require: true,
   },
   password: {
     type: String,
@@ -40,4 +41,15 @@ const userSchema = new mongoose.Schema({
     maxLength: 12,
   },
 });
-const userModel =  mongoose.model('user', userSchema)
+userSchema.methods.genrateAuthTokens = function () {
+  return jwt.sign({ _id: this.id }, process.env.SECREAT_KEY, {
+    expiresIn: "24h",
+  });
+};
+userSchema.statics.hashPassword = async function (password) {
+  return await bcrypt.hash(password, 10);
+};
+userSchema.methods.comparePassword = async function () {
+  return await bcrypt.compare(password, this.password);
+};
+export const userModel = mongoose.model("user", userSchema);
