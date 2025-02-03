@@ -2,11 +2,19 @@ import mongoose from "mongoose";
 import validator from "express-validator";
 import { db_comment } from "../../constants/comments";
 const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    require: true,
-    minLength: 3,
-    maxLength: 14,
+  fullName: {
+    firstName: {
+      type: String,
+      require: true,
+      minLength: 3,
+      maxLength: 14,
+    },
+    lastName: {
+      type: String,
+      require: true,
+      minLength: 3,
+      maxLength: 12,
+    },
   },
   email: {
     type: String,
@@ -16,14 +24,20 @@ const userSchema = new mongoose.Schema({
     trim: true,
     validate(value) {
       if (!validator.isEmail(value)) {
-          console.log(db_comment.email)
+        console.log(db_comment.email);
       }
     },
   },
-  password : {
-    type : String,
+  phone: {
+    type: Number,
     require : true,
-    minLength : 5,
-    maxLength : 12,
-  }
+
+  },
+  password: {
+    type: String,
+    require: true,
+    minLength: 5,
+    maxLength: 12,
+  },
 });
+const userModel =  mongoose.model('user', userSchema)

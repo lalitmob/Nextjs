@@ -51,11 +51,11 @@ const Landing: React.FC<props> = ({ idx, setIdx }) => {
               key={id}
               onClick={() => setIdx(id)}
               className={cn(
-                " flex items-center justify-center rounded-full cursor-pointer transition",
-                isActive ? "bg-green-400" : " hover:bg-gray-400"
+                "flex items-center ml-1 md:ml-3 justify-end rounded-full",
+                { "bg-green-400": isActive, "bg-white-1": !isActive }
               )}
             >
-              <i className="bx bx-circle text-xs sm:text-sm"></i>
+              <i className="bx bx-circle text-xs md:text-sm text-transparent"></i>
             </div>
           );
         })}
