@@ -48,7 +48,7 @@ const Page: React.FC = () => {
           <div className="flex mt-8 justify-center">
             <button
               onClick={() => setModel(true)}
-              className="border py-3 px-3 md:px-5 md:text-xl rounded-2xl bg-blue-500 transition-all duration-300 hover:text-black-4 hover:bg-green-300"
+              className="shadow-sm shadow-black-1 text-white-1 py-3 px-3 md:px-5 md:text-xl rounded-2xl bg-blue-500 transition-all duration-300 hover:text-black-4 hover:bg-green-300"
             >
               {uiConstant.buttonName}
             </button>

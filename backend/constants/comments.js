@@ -19,5 +19,8 @@ export const validation_comments = {
 };
 
 export const User_comments = {
- exist : "User already exist"
-}
+  exist: "User already exist",
+  not_found: "User not found",
+  Cred_incorrect: "Credential incorrect please check email and password",
+};
+

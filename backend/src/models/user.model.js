@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
-import validator from "express-validator";
-import { db_comment } from "../../constants/comments";
+import validator from "validator";
+import { db_comment } from "../../constants/comments.js";
 import bcrypt from "bcryptjs";
 const userSchema = new mongoose.Schema({
   fullName: {
@@ -37,8 +37,7 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     require: true,
-    minLength: 5,
-    maxLength: 12,
+    select: false,
   },
 });
 userSchema.methods.genrateAuthTokens = function () {
@@ -49,7 +48,7 @@ userSchema.methods.genrateAuthTokens = function () {
 userSchema.statics.hashPassword = async function (password) {
   return await bcrypt.hash(password, 10);
 };
-userSchema.methods.comparePassword = async function () {
+userSchema.methods.comparePassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 export const userModel = mongoose.model("user", userSchema);

@@ -1,10 +1,10 @@
 import { validationResult } from "express-validator";
-import { userModel } from "../models/user.model";
-import createUser from "../services/user.service";
-import HTTP_STATUS_CODES from "../httpStatus";
-import { User_comments } from "../../constants/comments";
+import { userModel } from "../models/user.model.js";
+import createUser from "../services/user.service.js";
+import HTTP_STATUS_CODES from "../httpStatus.js";
+import { User_comments } from "../../constants/comments.js";
 const userAuthentication = {
-  register: (req, res) => {
+  register: async (req, res) => {
     const error = validationResult(req);
     if (!error.isEmpty()) {
       return res
@@ -13,14 +13,14 @@ const userAuthentication = {
     }
     try {
       const { fullName, phone, email, password } = req.body;
-      const isUser = userModel.findOne({ email });
+      const isUser = await userModel.findOne({ email });
       if (isUser) {
         return res
           .status(HTTP_STATUS_CODES.CLIENT_ERROR.BAD_REQUEST)
-          .json({ error: User_comments.exist });
+          .json({ message: User_comments.exist });
       }
-      const hashedPassword = userModel.hashPassword(password);
-      const user = createUser({
+      const hashedPassword = await userModel.hashPassword(password);
+      const user = await createUser({
         firstName: fullName.firstName,
         lastName: fullName.lastName,
         email,
@@ -33,4 +33,39 @@ const userAuthentication = {
       res.status(400).json({ error: error.message });
     }
   },
+  login: async (req, res) => {
+    const { email, password } = req.body;
+    const error = validationResult(req);
+    if (!error) {
+      return res
+        .status(HTTP_STATUS_CODES.CLIENT_ERROR.BAD_REQUEST)
+        .json({ error: error.array() });
+    }
+    try {
+      const user = await userModel.findOne({ email }).select("+password");
+      if (!user) {
+        res
+          .status(HTTP_STATUS_CODES.CLIENT_ERROR.UNAUTHORIZED)
+          .json({ error: User_comments.not_found });
+      }
+      const isPassMatching = user.comparePassword(password);
+      if (!isPassMatching) {
+        return res
+          .status(HTTP_STATUS_CODES.CLIENT_ERROR.UNAUTHORIZED)
+          .json({ error: User_comments.Cred_incorrect });
+      }
+      const token = await user.genrateAuthTokens();
+      res.cookie("token", token);
+      return res.status(HTTP_STATUS_CODES.SUCCESS.OK).json({
+        token,
+        user,
+      });
+    } catch (error) {
+      res
+        .status(HTTP_STATUS_CODES.CLIENT_ERROR.UNAUTHORIZED)
+        .json({ error: error.message });
+    }
+  },
 };
+
+export default userAuthentication;

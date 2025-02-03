@@ -1,5 +1,5 @@
-import { userModel } from "../models/user.model";
-const createUser = async ({ firstName, email, password, phone }) => {
+import { userModel } from "../models/user.model.js";
+const createUser = async ({ firstName,lastName, email, password, phone }) => {
   try {
     if (!firstName || !email || !password || !phone) {
       throw new Error("All field are important");
@@ -16,7 +16,7 @@ const createUser = async ({ firstName, email, password, phone }) => {
     await user.save();
     return user;
   } catch (error) {
-    throw new Error({ error: error.message });
+    throw new Error(error.message);
   }
 };
 export default createUser;

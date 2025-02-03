@@ -1,4 +1,7 @@
 import express from "express";
-import { registerValidation } from "../validation";
-const route = express.Router();
-route.get("/login", registerValidation);
+import { loginValidation, registerValidation } from "../validation.js";
+import userAuthentication from "../controllers/auth.controller.js";
+const router = express.Router();
+router.post("/register", registerValidation, userAuthentication.register);
+export default router
+router.post("/login",loginValidation,userAuthentication.login)
