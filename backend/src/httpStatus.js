@@ -1,5 +1,4 @@
 const HTTP_STATUS_CODES = {
-    // 1xx: Informational Responses
     INFORMATIONAL: {
       CONTINUE: 100,
       SWITCHING_PROTOCOLS: 101,
@@ -7,7 +6,6 @@ const HTTP_STATUS_CODES = {
       EARLY_HINTS: 103,
     },
   
-    // 2xx: Success
     SUCCESS: {
       OK: 200,
       CREATED: 201,
@@ -21,7 +19,7 @@ const HTTP_STATUS_CODES = {
       IM_USED: 226,
     },
   
-    // 3xx: Redirection
+    
     REDIRECTION: {
       MULTIPLE_CHOICES: 300,
       MOVED_PERMANENTLY: 301,
@@ -33,7 +31,6 @@ const HTTP_STATUS_CODES = {
       PERMANENT_REDIRECT: 308,
     },
   
-    // 4xx: Client Errors
     CLIENT_ERROR: {
       BAD_REQUEST: 400,
       UNAUTHORIZED: 401,
@@ -66,7 +63,6 @@ const HTTP_STATUS_CODES = {
       UNAVAILABLE_FOR_LEGAL_REASONS: 451,
     },
   
-    // 5xx: Server Errors
     SERVER_ERROR: {
       INTERNAL_SERVER_ERROR: 500,
       NOT_IMPLEMENTED: 501,
