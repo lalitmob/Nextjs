@@ -6,7 +6,7 @@ import { User_comments } from "../../constants/comments.js";
 const userAuthentication = {
   register: async (req, res) => {
     console.log(req);
-     
+
     const error = validationResult(req);
     if (!error.isEmpty()) {
       console.log("validation");
@@ -69,6 +69,10 @@ const userAuthentication = {
         .status(HTTP_STATUS_CODES.CLIENT_ERROR.UNAUTHORIZED)
         .json({ error: error.message });
     }
+  },
+  logout: async (req, res) => {
+    res.cookie("token", null, { expires: new Date(Date.now()) });
+    res.status(HTTP_STATUS_CODES.SUCCESS.OK).send("Logout successfully")
   },
 };
 
