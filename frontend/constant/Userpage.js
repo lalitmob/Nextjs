@@ -199,7 +199,7 @@ export const template = {
       id: 20,
       image: "https://reactcrm.us/product/devias-kit-react-admin-dashboard/",
       name: "Devias Kit - React Admin Dashboard",
-      price: "Free",
+      price: "$99",
     },
     {
       id: 21,
@@ -207,39 +207,39 @@ export const template = {
         "https://reactcrm.us/product/devias-kit-pro-client-admin-dashboard/",
 
       name: "Modernize Next.js Free Admin Template",
-      price: "Free",
+      price: "$88",
     },
     {
       id: 22,
       image: "https://mui.com/store/items/mantis-free-react-admin-dashboard/",
       name: "Mantis Free - React Admin Dashboard Template",
-      price: "Free",
+      price: "$79",
     },
     {
       id: 23,
       image: "https://mira.bootlab.io/",
       name: "Berry Free - React Material Admin Dashboard",
-      price: "Free",
+      price: "$50",
     },
     {
       id: 24,
       image:
         "https://reactcrm.us/product/devias-kit-pro-client-admin-dashboard/",
       name: "SaasAble Free - Multipurpose UI Kit and Dashboard Template",
-      price: "Free",
+      price: "$68",
     },
     {
       id: 25,
       image: "https://mui.com/store/items/paperbase/",
       name: "Paperbase",
-      price: "Free",
+      price: "$45",
     },
     {
       id: 26,
       image:
         "https://topcode.vn/source-code/minimal-client-and-admin-dashboard-47678.htm",
       name: "Minimal Free – React Admin Dashboard",
-      price: "Free",
+      price: "$0",
     },
     {
       id: 27,

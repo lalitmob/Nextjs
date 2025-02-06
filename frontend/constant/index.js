@@ -12,7 +12,7 @@ export const uiConstant = {
     "/icons/bg3.jpg",
     "/icons/bg4.jpg",
     "/icons/bg5.jpg",
-    "/icons/bg6.jpg"
+    "/icons/bg6.jpg",
   ],
 
   buttonName: "Create an Account",
@@ -309,7 +309,7 @@ export const model_ui = {
     },
 
     {
-      name: "phoneNumber",
+      name: "phone",
       label: "Phone Number",
       type: "tel",
       placeholder: "Enter your phone number",
@@ -355,4 +355,30 @@ export const model_ui = {
       placeholder: "Enter your company ID",
     },
   ],
+};
+export const authValidation = {
+  email_regex: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+
+  password_regex:
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+
+  phone_regex: /^\+?[1-9]\d{1,14}$/,
+  email_required: "Email is a required field",
+  email_invalid: "Please enter a valid email address",
+
+  password_required: "Password is a required field",
+  password_invalid:
+    "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character",
+
+  firstName_required: "First name is a required field",
+  firstName_invalid: "First name must be at least 3 characters long",
+
+  lastName_required: "Last name is a required field",
+  lastName_invalid: "Last name must be at least 3 characters long",
+
+  phone_required: "Phone number is a required field",
+  phone_invalid: "Please enter a valid phone number",
+
+  confirmPassword_required: "Confirm password is a required field",
+  confirmPassword_mismatch: "Passwords do not match",
 };

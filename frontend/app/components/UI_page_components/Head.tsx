@@ -1,7 +1,13 @@
 import { head } from "@/constant/Userpage";
-import React from "react";
+import  { triggerContext } from "@/context/Triggerprovider";
+import React,{useContext} from "react";
 
 const Head = () => {
+  const context =useContext(triggerContext)
+  if(!context){
+    throw new Error("Context must be used with in it's provider")
+  }
+  const {setListView, listView} = context
   return (
     <div className="grid grid-cols-[60%_40%] w-full ">
       <div className="flex flex-col gap-2">
@@ -9,9 +15,9 @@ const Head = () => {
         <p className="text-lg text-gray-700">{head.para}</p>
       </div>
       <div className="flex justify-end  items-end gap-3  p-3 ">
-        <div className="flex  h-full pt-12">
-          <i className="bx bx-list-ul"></i>
-          <i className="bx bx-grid-alt"></i>
+        <div className="flex  h-full pt-12 gap-2">
+          <i onClick={()=>setListView(true)} className={`bx bx-list-ul hover:cursor-pointer ${listView&&"text-gray-400"}`}></i>
+          <i onClick={()=>setListView(false)} className={`bx bx-grid-alt hover:cursor-pointer ${!listView&&"text-gray-400"}`}></i>
         </div>
 
         <div className="relative flex w-[50%]  gap-1 flex-col">

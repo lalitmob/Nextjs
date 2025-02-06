@@ -5,8 +5,11 @@ import HTTP_STATUS_CODES from "../httpStatus.js";
 import { User_comments } from "../../constants/comments.js";
 const userAuthentication = {
   register: async (req, res) => {
+    console.log(req);
+     
     const error = validationResult(req);
     if (!error.isEmpty()) {
+      console.log("validation");
       return res
         .status(HTTP_STATUS_CODES.CLIENT_ERROR.BAD_REQUEST)
         .json({ error: error.array() });
@@ -15,6 +18,7 @@ const userAuthentication = {
       const { fullName, phone, email, password } = req.body;
       const isUser = await userModel.findOne({ email });
       if (isUser) {
+        console.log("user not found");
         return res
           .status(HTTP_STATUS_CODES.CLIENT_ERROR.BAD_REQUEST)
           .json({ message: User_comments.exist });
@@ -48,7 +52,7 @@ const userAuthentication = {
           .status(HTTP_STATUS_CODES.CLIENT_ERROR.UNAUTHORIZED)
           .json({ error: User_comments.not_found });
       }
-      const isPassMatching = user.comparePassword(password);
+      const isPassMatching = await user.comparePassword(password);
       if (!isPassMatching) {
         return res
           .status(HTTP_STATUS_CODES.CLIENT_ERROR.UNAUTHORIZED)

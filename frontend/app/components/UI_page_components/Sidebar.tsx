@@ -1,8 +1,10 @@
 import { sidebar } from "@/constant/Userpage";
 import React, { useState } from "react";
-
+interface collapseState {
+  [key : string] : boolean;
+}
 const Sidebar = () => {
-  const [collapse, setCollapse] = useState({
+  const [collapse, setCollapse] = useState<collapseState>({
     framework: true,
     ui_framework: false,
     categories: false,
@@ -30,12 +32,14 @@ const Sidebar = () => {
       </div>
       <div className="filter-section ">
         {sidebar.select.map((data) => (
-          <div key={data.key} className="border-y py-2 bg-gray-100/30 px-2">
-            <div onClick={() => collapseHandler(data.key)} className="flex w-full justify-between items-center mb-2">
+          <div key={data.key} className="border-y py-2 bg-gray-100/30 px-2 ">
+            <div
+              onClick={() => collapseHandler(data.key)}
+              className="flex w-full justify-between hover:cursor-pointer hover:bg-gray-200/50 rounded-xl px-2 py-1/2 items-center mb-2"
+            >
               <h2 className="mb-1">{data.heading}</h2>
 
               <i
-                
                 className={`${
                   collapse[data.key]
                     ? "bx bx-chevron-up "
@@ -46,7 +50,7 @@ const Sidebar = () => {
 
             <div className={`${collapse[data.key] && "hidden"}`}>
               {data.options.map((data, id) => (
-                <div key={id} className="flex gap-3  mb-2">
+                <div key={id} className="flex gap-3 px-2 mb-2">
                   <input type="checkbox" />
                   <label className="text-sm text-gray-700">{data}</label>
                 </div>
