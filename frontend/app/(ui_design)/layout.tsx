@@ -5,7 +5,6 @@ import Sidebar from "../components/UI_page_components/Sidebar";
 import Head from "../components/UI_page_components/Head";
 import Triggerprovider from "@/context/Triggerprovider";
 import dynamic from "next/dynamic";
-// Import the PrivatePage component
 const PrivatePage = dynamic(() => import("../components/private/Privatepage"), {
   ssr: false,
 });
