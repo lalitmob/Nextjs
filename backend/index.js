@@ -4,21 +4,39 @@ import cors from "cors";
 import morgan from "morgan";
 import { indexcomment } from "./constants/comments.js";
 import connectDB from "./src/config/db.js";
-import authRoutes from "./src/routes/auth.router.js"
+import authRoutes from "./src/routes/auth.router.js";
+import userRoutes from "./src/routes/user.router.js";
+import http from "http";
+import { Server } from "socket.io";
 dotenv.config();
 const app = express();
+const httpServer = http.createServer(app);
+const io = new Server(httpServer, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"],
+  },
+});
+const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
-app.get('/', (req, res)=>{
-  return res.send("Hello world")
-})
-app.use('/', authRoutes)
-const port = process.env.PORT || 4000;
+app.use("/", authRoutes);
+app.use("/", userRoutes);
+io.on("connection", (socket) => {
+  console.log(`socket ${socket.id} connected`);
+  socket.on("comment", (sendComment) => {
+    io.emit("comment", sendComment);
+  });
+  socket.on("disconnect", () => {
+    console.log("User disconnected", socket.id);
+  });
+});
+
 connectDB()
   .then(console.log(indexcomment.db_connect))
   .then(
-    app.listen(port, (req, res) => {
+    httpServer.listen(port, (req, res) => {
       console.log(indexcomment.server + " " + port);
     })
   )

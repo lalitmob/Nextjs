@@ -66,7 +66,7 @@ const userAuthentication = {
       });
     } catch (error) {
       res
-        .status(HTTP_STATUS_CODES.CLIENT_ERROR.UNAUTHORIZED)
+        .status(HTTP_STATUS_CODES.CLIENT_ERROR.BAD_REQUEST)
         .json({ error: error.message });
     }
   },

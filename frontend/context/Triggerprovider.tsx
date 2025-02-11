@@ -12,6 +12,15 @@ interface dataItem {
   image: string;
   name: string;
   price: string;
+  category: string;
+  description: string;
+  features: string[];
+  technologies: string[];
+  rating: number;
+  reviews: number;
+  livePreview: string;
+  documentation: string;
+  author: string;
 }
 interface contentDataValidation {
   data: dataItem[];
@@ -40,7 +49,9 @@ const Triggerprovider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [filteredData, setFilteredData] =
     useState<contentDataValidation | null>(null);
   const [prompt, setPrompt] = useState<string>("");
-  const [displayData, setDisplayData] = useState<contentDataValidation | null>(template || { data: [] });
+  const [displayData, setDisplayData] = useState<contentDataValidation | null>(
+    template || { data: [] }
+  );
   useEffect(() => {
     setContentData(template);
   }, []);

@@ -41,7 +41,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 userSchema.methods.genrateAuthTokens = function () {
-  return jwt.sign({ _id: this.id }, process.env.SECREAT_KEY, {
+  return jwt.sign({ _id: this.id }, process.env.SECRET_KEY, {
     expiresIn: "24h",
   });
 };

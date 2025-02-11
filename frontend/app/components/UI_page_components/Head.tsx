@@ -8,18 +8,27 @@ const Head = () => {
   }
   const { setListView, listView, displayData, setDisplayData } = context;
   const sortHandler = (fields: string) => {
-    console.log(fields)
     const sortedArray = [...(displayData?.data || [])];
-     console.log("1",sortedArray)
     switch (fields) {
       case "A-Z":
         sortedArray.sort((a, b) => a.name.localeCompare(b.name));
-        console.log("2",sortedArray.sort((a, b) => a.name.localeCompare(b.name)))
         break;
       case "Z-A":
         sortedArray.sort((a, b) => b.name.localeCompare(a.name));
-        console.log("3",sortedArray.sort((a, b) => b.name.localeCompare(a.name))
-      )
+        break;
+      case "Price: Low to High":
+        sortedArray.sort(
+          (a, b) =>
+            parseFloat(a.price.replace(/[^0-9.]/g, "")) -
+            parseFloat(b.price.replace(/[^0-9.]/g, ""))
+        );
+        break;
+      case "Price: High to Low":
+        sortedArray.sort(
+          (a, b) =>
+            parseFloat(b.price.replace(/[^0-9.]/g, "")) -
+            parseFloat(a.price.replace(/[^0-9.]/g, ""))
+        );
         break;
       default:
         return;
