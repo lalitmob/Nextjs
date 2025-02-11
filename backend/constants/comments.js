@@ -23,4 +23,7 @@ export const User_comments = {
   not_found: "User not found",
   Cred_incorrect: "Credential incorrect please check email and password",
 };
-
+export const comment_val = {
+  wentWrong : "Something went wrong",
+  fields: "All fields are necessary",
+};

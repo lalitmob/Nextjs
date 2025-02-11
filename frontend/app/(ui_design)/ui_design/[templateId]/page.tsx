@@ -54,7 +54,7 @@ const TemplateDetails = () => {
                 />
               </div>
             </div>
-            <div className=" mt-5 border border-black-2 rounded-2xl shadow-xl max-h-[500px] overflow-auto  p-5 flex gap-5">
+            <div className=" mt-5 border border-black-2 rounded-2xl shadow-xl max-h-[500px] overflow-auto  px-5 py-4 flex gap-5">
               <Comments/>
             </div>
           </div>
