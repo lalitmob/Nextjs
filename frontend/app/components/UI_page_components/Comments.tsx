@@ -35,7 +35,7 @@ const Comments = () => {
       <div>
         {comments.map((cmt, id) => (
           <div key={id}>
-            <strong>{cmt.name}</strong>
+            <strong className="capitalized">{cmt.name}</strong>
             <p>{cmt.comment}</p>
             <button onClick={()=>handleReplay()} className="w-[100px] border">Reply</button>
           </div>

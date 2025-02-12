@@ -6,6 +6,7 @@ import { indexcomment } from "./constants/comments.js";
 import connectDB from "./src/config/db.js";
 import authRoutes from "./src/routes/auth.router.js";
 import userRoutes from "./src/routes/user.router.js";
+import commentRoutes from "./src/routes/comments.router.js";
 import http from "http";
 import { Server } from "socket.io";
 dotenv.config();
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use("/", authRoutes);
 app.use("/", userRoutes);
+app.use("/", commentRoutes);
 io.on("connection", (socket) => {
   console.log(`socket ${socket.id} connected`);
   socket.on("comment", (sendComment) => {

@@ -1,9 +1,12 @@
 import mongoose, { mongo } from "mongoose";
 const conversationScheme = new mongoose.Schema(
   {
-    users: {
-      type: Array,
-      required: true,
+    fromuserId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
+    },
+    toUserId: {
+      type: mongoose.Schema.Types.ObjectId,
     },
   },
   { timestamps: true }

@@ -1,20 +1,34 @@
 import mongoose from "mongoose";
-import { type } from "os";
 const commentsScheme = new mongoose.Schema(
   {
-    conversationId: {
-      type: String,
+    productId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "product",
+      required: true,
     },
-    senderId: {
-      type: String,
+    repliesId: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref : "comment"
+    }],
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
+      required: true,
     },
-    message: {
+    comment: {
       type: String,
+      required: true,
     },
+    likes: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user",
+      },
+    ],
   },
   {
     timestamps: true,
   }
 );
-const commentsModel = mongoose.model("commentModel", commentsScheme);
+const commentsModel = mongoose.model("comment", commentsScheme);
 export default commentsModel;
