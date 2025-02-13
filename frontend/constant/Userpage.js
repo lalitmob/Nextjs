@@ -72,6 +72,20 @@ export const head = {
     ],
   },
 };
+export const TemplateModelConst = {
+  fields: [
+    { name: "productName", label: "Name", type: "text" },
+    { name: "price", label: "Price", type: "number" },
+    { name: "category", label: "Category", type: "text" },
+    { name: "description", label: "Description", type: "textarea" },
+    { name: "features", label: "Features", type: "array" },
+    { name: "technologies", label: "Technologies", type: "array" },
+    { name: "imageUrl", label: "Image URL", type: "text" },
+    { name: "author", label: "Author Name", type: "text" }, 
+  ],
+};
+
+
 export const template = {
   data: [
     {
@@ -79,7 +93,7 @@ export const template = {
       image:
         "https://topcode.vn/source-code/minimal-client-and-admin-dashboard-47678.htm",
       name: "Minimal - Client and Admin Dashboard",
-      price: "$69",
+      price: 69,
       category: "Dashboard",
       description:
         "A minimalistic client and admin dashboard with a clean UI and robust features.",
@@ -102,7 +116,7 @@ export const template = {
       image:
         "https://reactcrm.us/product/devias-kit-pro-client-admin-dashboard/",
       name: "Devias Kit Pro - Client and Admin Dashboard",
-      price: "$69",
+      price: 69,
       category: "Dashboard",
       description:
         "A powerful client and admin dashboard template built for scalability and ease of use.",
@@ -124,7 +138,7 @@ export const template = {
       id: 3,
       image: "https://maccarianagency.com/",
       name: "theFront - Multipurpose Template + UI Kit",
-      price: "$49",
+      price: 49,
       category: "Multipurpose UI Kit",
       description:
         "A flexible and feature-rich UI kit for building modern web applications.",
@@ -146,7 +160,7 @@ export const template = {
       id: 4,
       image: "https://mui.com/store/items/berry-react-material-admin/",
       name: "Berry - React Material UI Dashboard Template",
-      price: "$69",
+      price: 69,
       category: "Dashboard",
       description:
         "A sleek and powerful admin dashboard built with Material UI and React.",
@@ -169,7 +183,7 @@ export const template = {
       image:
         "https://reactcrm.us/product/zone-multipurpose-landing-page-ui-kit/",
       name: "Zone - Multipurpose Landing Page + UI Kit",
-      price: "$59",
+      price: 59,
       category: "Landing Page UI Kit",
       description:
         "A comprehensive UI kit for building high-converting landing pages.",
@@ -192,7 +206,7 @@ export const template = {
       image:
         "https://mui.com/store/items/mantis-react-admin-dashboard-template/",
       name: "Mantis - React Material UI Dashboard Template",
-      price: "$69",
+      price: 69,
       category: "Dashboard",
       description:
         "A professional and modern admin dashboard template with Material UI design.",
@@ -214,7 +228,7 @@ export const template = {
       id: 7,
       image: "https://mui.com/store/items/devias-kit-pro/",
       name: "Bazaar Pro - Multipurpose Next.js Ecommerce Template",
-      price: "$69",
+      price: 69,
       category: "Ecommerce",
       description:
         "A feature-rich ecommerce template built for modern online stores.",
@@ -236,7 +250,7 @@ export const template = {
       id: 8,
       image: "https://mira.bootlab.io/",
       name: "Mira Pro - React Material UI Admin Dashboard",
-      price: "$69",
+      price: 69,
       category: "Dashboard",
       description:
         "A high-performance admin dashboard template built with Material UI and React.",
@@ -258,7 +272,7 @@ export const template = {
       id: 9,
       image: "https://mantisdashboard.io/",
       name: "Materio - Next.js Admin Template",
-      price: "$69",
+      price: 69,
       category: "Dashboard",
       description:
         "A professional and modern Next.js-based admin template for web applications.",
@@ -280,7 +294,7 @@ export const template = {
       id: 10,
       image: "https://mui.com/store/items/paperbase/",
       name: "uifort - React Client and Admin Dashboard Template",
-      price: "$69",
+      price: 69,
       category: "Dashboard",
       description:
         "A highly customizable client and admin dashboard template with a sleek UI.",
@@ -304,7 +318,7 @@ export const template = {
       image:
         "https://mui.com/store/items/mantis-react-admin-dashboard-template/",
       name: "UI Foundations Kit - SaaS Dashboard Template",
-      price: "$49",
+      price: 49,
       category: "Dashboard",
       description:
         "A lightweight and flexible dashboard template for SaaS applications.",
@@ -326,7 +340,7 @@ export const template = {
       id: 12,
       image: "https://webbee.maccarianagency.com/",
       name: "Webbee - Multipurpose Landing Page UI Kit",
-      price: "$59",
+      price: 59,
       category: "Landing Page UI Kit",
       description:
         "A beautifully designed UI kit for building modern and responsive landing pages.",
@@ -348,7 +362,7 @@ export const template = {
       id: 13,
       image: "https://bazar-react.vercel.app/",
       name: "UKO - Client and Admin Dashboard (Next.js and Vite)",
-      price: "$49",
+      price: 49,
       category: "Dashboard",
       description:
         "A modern and performant dashboard template for client and admin applications.",
@@ -371,7 +385,7 @@ export const template = {
       image:
         "https://reactcrm.us/product/devias-kit-pro-client-admin-dashboard/",
       name: "Otis Admin PRO - Material Dashboard for React",
-      price: "$69",
+      price: 69,
       category: "Dashboard",
       description:
         "A clean and feature-rich React admin dashboard template with Material UI.",
@@ -394,7 +408,7 @@ export const template = {
       image:
         "https://reactcrm.us/product/zone-multipurpose-landing-page-ui-kit/",
       name: "Modernize - React and Next.js Admin Template",
-      price: "$49",
+      price: 49,
       category: "Dashboard",
       description:
         "A sleek and modern admin dashboard built with React and Next.js.",
@@ -416,7 +430,7 @@ export const template = {
       id: 16,
       image: "https://mui.com/store/items/coded-theme-react-dashboard/",
       name: "CodedTheme React Dashboard Pro",
-      price: "$69",
+      price: 69,
       category: "Dashboard",
       description:
         "A modern admin dashboard with prebuilt Material UI components and seamless integration.",
@@ -438,7 +452,7 @@ export const template = {
       id: 17,
       image: "https://justboil.me/tailwind-dashboard/",
       name: "JustBoil - Tailwind Admin Dashboard",
-      price: "$59",
+      price: 59,
       category: "Dashboard",
       description:
         "A lightweight admin dashboard template built using Tailwind CSS and React.",
@@ -460,7 +474,7 @@ export const template = {
       id: 18,
       image: "https://next-commerce.vercel.app/",
       name: "Next Commerce - Full E-commerce Solution",
-      price: "$79",
+      price: 79,
       category: "Ecommerce",
       description:
         "A fully functional e-commerce template with product management and payment integrations.",
@@ -483,7 +497,7 @@ export const template = {
       image:
         "https://wrapbootstrap.com/theme/angle-bootstrap-admin-template-WB04HF123",
       name: "Angle - React Admin Template",
-      price: "$69",
+      price: 69,
       category: "Dashboard",
       description:
         "A multipurpose React admin dashboard template with a clean and modern UI.",
@@ -505,7 +519,7 @@ export const template = {
       id: 20,
       image: "https://themesberg.com/product/ui-kits/volt-react-dashboard",
       name: "Volt React - Free Bootstrap Dashboard",
-      price: "Free",
+      price: 0,
       category: "Dashboard",
       description:
         "A free and open-source React dashboard template built with Bootstrap.",
@@ -527,7 +541,7 @@ export const template = {
       id: 21,
       image: "https://mui.com/store/items/materially-react/",
       name: "Materially - React Admin Dashboard",
-      price: "$69",
+      price: 69,
       category: "Dashboard",
       description:
         "A Material UI-based admin dashboard template with powerful features.",
@@ -549,7 +563,7 @@ export const template = {
       id: 22,
       image: "https://vuexy.react.demo/",
       name: "Vuexy - React Admin Dashboard",
-      price: "$79",
+      price: 79,
       category: "Dashboard",
       description:
         "A premium React admin template with a modern UI and flexible components.",
@@ -571,7 +585,7 @@ export const template = {
       id: 23,
       image: "https://sneat.react.demo/",
       name: "Sneat - MUI Admin Template",
-      price: "$59",
+      price: 59,
       category: "Dashboard",
       description:
         "A Material UI-based admin dashboard template with clean code structure.",
@@ -593,7 +607,7 @@ export const template = {
       id: 24,
       image: "https://startbootstrap.com/theme/sb-admin-react",
       name: "SB Admin - Free React Admin Template",
-      price: "Free",
+      price: 0,
       category: "Dashboard",
       description: "A free and open-source admin dashboard template for React.",
       features: [
@@ -614,7 +628,7 @@ export const template = {
       id: 25,
       image: "https://coreui.io/react/",
       name: "CoreUI - React Admin Template",
-      price: "$49",
+      price: 49,
       category: "Dashboard",
       description:
         "A feature-rich admin template built with CoreUI components.",
@@ -636,7 +650,7 @@ export const template = {
       id: 26,
       image: "https://adminmart.com/product/poco-react-admin/",
       name: "Poco - React Admin Dashboard",
-      price: "$59",
+      price: 59,
       category: "Dashboard",
       description: "A clean and modern React admin dashboard template.",
       features: [
@@ -657,7 +671,7 @@ export const template = {
       id: 27,
       image: "https://mui.com/store/items/fuse-react/",
       name: "Fuse - React Admin Template",
-      price: "$79",
+      price: 79,
       category: "Dashboard",
       description:
         "A flexible and powerful Material UI admin template for React applications.",
@@ -679,7 +693,7 @@ export const template = {
       id: 28,
       image: "https://soft-ui-dashboard-react.creative-tim.com/",
       name: "Soft UI - React Dashboard",
-      price: "$69",
+      price: 69,
       category: "Dashboard",
       description:
         "A stylish and modern React admin template with Soft UI design.",
@@ -701,7 +715,7 @@ export const template = {
       id: 29,
       image: "https://dorsin-react.firebaseapp.com/",
       name: "Dorsin - React Landing Page Template",
-      price: "$49",
+      price: 49,
       category: "Landing Page",
       description:
         "A sleek and elegant landing page template built with React and Bootstrap.",
@@ -723,7 +737,7 @@ export const template = {
       id: 30,
       image: "https://hously-react.vercel.app/",
       name: "Hously - Real Estate React Template",
-      price: "$59",
+      price: 59,
       category: "Real Estate",
       description:
         "A professional real estate template designed for property listings and management.",

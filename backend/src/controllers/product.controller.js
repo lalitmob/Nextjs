@@ -21,7 +21,7 @@ const productController = {
                 technologies: about.technologies || [],
                 rating: about.rating || 0,
                 review: about.review || 0,
-                author: about.author || "Anunymous",
+                author: about.author || "Anonymous",
             },
             imageUrl,
         });

@@ -2,6 +2,7 @@
 import Modelprovider from "@/context/Modelprovider";
 import Navbar from "../components/Navbar";
 import "boxicons/css/boxicons.min.css";
+import "dotenv"
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -20,7 +20,6 @@ const Content = () => {
   useEffect(() => {
     setDisplayData(prompt ? filteredData : contentData);
   }, [prompt, contentData, filteredData, setDisplayData]);
-  console.log(displayData);
 
   return (
     <div className={`flex ${listView ? "flex-col" : "flex-wrap"} gap-5`}>
@@ -65,7 +64,7 @@ const Content = () => {
                   </h3>
                 </div>
                 <div className={`${listView && "text-xl text-bold"}`}>
-                  <p>{data.price}</p>
+                  <p>${data.price}</p>
                 </div>
               </div>
               <div className={`flex gap-3 w-full px-4 pb-5 font-bold mt-3`}>

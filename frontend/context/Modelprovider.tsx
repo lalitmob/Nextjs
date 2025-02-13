@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { createContext, useRef } from "react";
-type sectionName = "pricing" | "contact" | "features" | "ourClient";
+type sectionName = "pricing" | "contact" | "features" | "ourClient" | string;
 interface ModelContexType {
   handlescroll: (field: sectionName) => void;
   sectionRef: Record<sectionName, React.RefObject<HTMLDivElement>>;

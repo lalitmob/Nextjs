@@ -3,6 +3,7 @@ import "boxicons/css/boxicons.min.css";
 import Navbar from "../components/UI_page_components/Navbar";
 import Triggerprovider from "@/context/Triggerprovider";
 import dynamic from "next/dynamic";
+import "dotenv"
 const PrivatePage = dynamic(() => import("../components/private/Privatepage"), {
   ssr: false,
 });

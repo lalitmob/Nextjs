@@ -11,7 +11,7 @@ interface dataItem {
   id: number;
   image: string;
   name: string;
-  price: string;
+  price: number;
   category: string;
   description: string;
   features: string[];

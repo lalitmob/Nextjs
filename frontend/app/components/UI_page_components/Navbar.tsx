@@ -3,13 +3,15 @@ import { navbar } from "../../../constant/Userpage";
 import { useAuth } from "@/app/api/Auth";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+
 const Navbar = () => {
   const { logout } = useAuth();
   const navigate = useRouter();
-  const handleNavigate = (field : string) => {
-    console.log(field)
+
+  const handleNavigate = (field: string) => {
+    console.log(field);
     if (field === "Design Kits") {
-      navigate.push("/ui_design/editor")
+      navigate.push("/ui_design/editor");
     }
   };
   return (
@@ -31,14 +33,19 @@ const Navbar = () => {
           ))}
         </div>
         <div className="flex items-center gap-2">
+          <button  className="font-bold hover:border hover:rounded-2xl px-4 py-2 text-blue-500  hover:bg-blue-500 hover:text-white-1 hover:shadow-lg transition-all duration-300 ">
+            Add template
+          </button>
           <button
             onClick={logout}
             className="font-bold hover:border hover:rounded-2xl px-4 py-2 text-blue-500  hover:bg-blue-500 hover:text-white-1 hover:shadow-lg transition-all duration-300 "
           >
             Logout
           </button>
+           
           <i className="bx bx-cart text-2xl border px-2 py-2 rounded-xl hover:shadow-xl shadow-md"></i>
         </div>
+       
       </div>
     </div>
   );

@@ -2,9 +2,9 @@ import { comment_val } from "../../constants/comments.js";
 import commentsModel from "../models/comments.model.js";
 
 const commentService = {
-  createComment: async ({ productId, repliesId, userId, comment }) => {
+  createComment: async ({ productId, repliesId, userId, comment, userName }) => {
     try {
-      if (!productId || !userId || !comment) {
+      if (!productId || !userId || !comment || !userName) {
         throw new Error(comment_val.fields);
       }
 
@@ -12,6 +12,7 @@ const commentService = {
         productId,
         userId,
         comment,
+        userName,
         repliesId: repliesId || [],
         likes: [],
       });

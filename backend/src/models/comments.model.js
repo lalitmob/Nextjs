@@ -6,14 +6,20 @@ const commentsScheme = new mongoose.Schema(
       ref: "product",
       required: true,
     },
-    repliesId: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref : "comment"
-    }],
+    repliesId: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "comment",
+      },
+    ],
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "user",
       required: true,
+    },
+    userName: {
+      type: String,
+      required : true
     },
     comment: {
       type: String,

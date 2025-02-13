@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { triggerContext } from "@/context/Triggerprovider";
 import Comments from "@/app/components/UI_page_components/Comments";
+
 interface dataItem {
   id: number;
   image: string;
@@ -40,7 +41,7 @@ const TemplateDetails = () => {
     return <div>Loading..........</div>;
   }
   return (
-    <div>
+    <div className="">
       {details && (
         <div>
           <div>
@@ -55,11 +56,12 @@ const TemplateDetails = () => {
               </div>
             </div>
             <div className=" mt-5 border border-black-2 rounded-2xl shadow-xl max-h-[500px] overflow-auto  px-5 py-4 flex gap-5">
-              <Comments/>
+              <Comments />
             </div>
           </div>
         </div>
       )}
+      
     </div>
   );
 };

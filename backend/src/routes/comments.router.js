@@ -7,4 +7,5 @@ router.post(
   authMiddleware,
   commentController.postComment
 );
+router.get("/comment/request", authMiddleware, commentController.RequestComments);
 export default router;
