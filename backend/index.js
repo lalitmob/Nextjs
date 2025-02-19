@@ -12,6 +12,8 @@ import http from "http";
 import { Server } from "socket.io";
 dotenv.config();
 const app = express();
+app.use(express.json());
+app.use(cors());
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
   cors: {
@@ -20,8 +22,6 @@ const io = new Server(httpServer, {
   },
 });
 const port = process.env.PORT || 4000;
-app.use(cors());
-app.use(express.json());
 app.use(morgan("dev"));
 app.use("/", authRoutes);
 app.use("/", userRoutes);

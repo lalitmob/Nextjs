@@ -19,7 +19,7 @@ const commentController = {
           .status(HTTP_STATUS_CODES.CLIENT_ERROR.UNAUTHORIZED)
           .json({ message: User_comments.Notloggedin });
       }
-      console.log(user.fullName.firstName);
+
       const comments = await commentService.createComment({
         productId: productId,
         repliesId: repliesId || [],
@@ -44,7 +44,7 @@ const commentController = {
           .json({ message: User_comments.Notloggedin });
       }
       const userId = user._id;
-      const comment = await commentsModel.find( {userId} );
+      const comment = await commentsModel.find({ userId });
       if (!comment) {
         return res
           .status(HTTP_STATUS_CODES.CLIENT_ERROR.BAD_REQUEST)

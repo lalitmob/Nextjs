@@ -10,14 +10,14 @@ const authMiddleware = async (req, res, next) => {
       : null);
 
   try {
-    console.log(token)
+    console.log(token);
     if (!token) {
       return res
         .status(HTTP_STATUS_CODES.CLIENT_ERROR.UNAUTHORIZED)
         .json(User_comments.not_found);
     }
     const secret = process.env.SECRET_KEY;
-    const decodeObj =  jwt.verify(token, secret);
+    const decodeObj = jwt.verify(token, secret);
     const { _id } = decodeObj;
     const user = await userModel.findById(_id);
     if (!user) {

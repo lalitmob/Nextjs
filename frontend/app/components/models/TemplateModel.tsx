@@ -14,14 +14,20 @@ const TemplateForm = () => {
     technologies: [""],
     imageUrl: "",
   });
-  const onChangeHandler = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    field: string
-  ) => {
-    setFormData((prev) => ({ ...prev, [field]: e.target.value }));
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => {
+      if (name === "technologies" || name === "features") {
+        return { ...prev, [name]: value.split(",").map((item) => item.trim()) };
+      }
+      if (name === "price") {
+        return { ...prev, [name]: Number(value) };
+      }
+      return { ...prev, [name]: value };
+    });
   };
-  const submitHandler = (e) => {
-    e.preventDefault()
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const data = {
       productName: formData.productName,
       price: formData.price,
@@ -38,14 +44,15 @@ const TemplateForm = () => {
 
   return (
     <form
-      onSubmit={(e)=>submitHandler(e)}
+      onSubmit={(e) => submitHandler(e)}
       className="flex flex-col gap-4 p-4 border rounded-lg"
     >
       {TemplateModelConst.fields.map((data, index) => (
         <input
           key={index}
+          name={data.name}
           value={formData[data.name]}
-          onChange={(e) => onChangeHandler(e, data.name)}
+          onChange={(e) => onChangeHandler(e)}
           type={data.type}
           required
           placeholder={data.label}

@@ -1,0 +1,26 @@
+# Step 1: Use Node.js base image for React app
+FROM node:18 AS build
+
+# Step 2: Set working directory inside container
+WORKDIR /usr/src/app
+
+# Step 3: Copy package.json and package-lock.json
+COPY frontend/package*.json ./
+
+# Step 4: Install frontend dependencies
+RUN npm install
+
+# Step 5: Copy the rest of the frontend code
+COPY frontend/ .
+
+# Step 6: Build React app
+RUN npm run build
+
+# Step 7: Use Nginx to serve the production build
+FROM nginx:alpine
+
+# Step 8: Copy built React app to Nginx public folder
+COPY --from=build /usr/src/app/build /usr/share/nginx/html
+
+# Step 9: Expose port 80
+EXPOSE 80

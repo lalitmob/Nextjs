@@ -3,10 +3,15 @@ import { userModel } from "../models/user.model.js";
 import createUser from "../services/user.service.js";
 import HTTP_STATUS_CODES from "../httpStatus.js";
 import { User_comments } from "../../constants/comments.js";
+import redisClient from "../../redisClient.js";
+let redis;
+(async()=>{
+  redis= await redisClient()
+})();
 const userAuthentication = {
   register: async (req, res) => {
     console.log(req);
-
+         
     const error = validationResult(req);
     if (!error.isEmpty()) {
       console.log("validation");
@@ -14,6 +19,7 @@ const userAuthentication = {
         .status(HTTP_STATUS_CODES.CLIENT_ERROR.BAD_REQUEST)
         .json({ error: error.array() });
     }
+    const role = req.params.role;
     try {
       const { fullName, phone, email, password } = req.body;
       const isUser = await userModel.findOne({ email });
@@ -23,11 +29,16 @@ const userAuthentication = {
           .status(HTTP_STATUS_CODES.CLIENT_ERROR.BAD_REQUEST)
           .json({ message: User_comments.exist });
       }
+       console.log(role)
+      if (role !== "admin" || role !== "user") {
+        throw new Error("role is not mentioned" );
+      }
       const hashedPassword = await userModel.hashPassword(password);
       const user = await createUser({
         firstName: fullName.firstName,
         lastName: fullName.lastName,
         email,
+        role,
         phone: phone,
         password: hashedPassword,
       });
@@ -60,6 +71,10 @@ const userAuthentication = {
       }
       const token = await user.genrateAuthTokens();
       res.cookie("token", token);
+      const tokenCached = redis.get("token")
+      if(!tokenCached){
+        redis.setex("token",3600, token )
+      }
       return res.status(HTTP_STATUS_CODES.SUCCESS.OK).json({
         token,
         user,
@@ -72,7 +87,7 @@ const userAuthentication = {
   },
   logout: async (req, res) => {
     res.cookie("token", null, { expires: new Date(Date.now()) });
-    res.status(HTTP_STATUS_CODES.SUCCESS.OK).send("Logout successfully")
+    res.status(HTTP_STATUS_CODES.SUCCESS.OK).send("Logout successfully");
   },
 };
 

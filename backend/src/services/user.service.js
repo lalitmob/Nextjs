@@ -1,7 +1,14 @@
 import { userModel } from "../models/user.model.js";
-const createUser = async ({ firstName,lastName, email, password, phone }) => {
+const createUser = async ({
+  firstName,
+  lastName,
+  email,
+  password,
+  role,
+  phone,
+}) => {
   try {
-    if (!firstName || !email || !password || !phone) {
+    if (!firstName || !email || !password || !phone || !role) {
       throw new Error("All field are important");
     }
     const user = new userModel({

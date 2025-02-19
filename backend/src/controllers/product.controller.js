@@ -4,7 +4,8 @@ import productService from "../services/product.service.js";
 const productController = {
   add: async (req, res) => {
     try {
-      const { productName, price, about, imageUrl } = req.body;
+      const { productName, price, imageUrl } = req.body.data;
+      const about = req.body.data.about || {}
       const user = req.user;
       if (!user) {
           return res.status(HTTP_STATUS_CODES.CLIENT_ERROR.UNAUTHORIZED).json({
@@ -15,13 +16,13 @@ const productController = {
             productName,
             price,
             about: {
-                category: about.category,
-                description: about.description || "",
-                features: about.features || [],
-                technologies: about.technologies || [],
-                rating: about.rating || 0,
-                review: about.review || 0,
-                author: about.author || "Anonymous",
+                category: about?.category || "uncategorized",
+                description: about?.description || "",
+                features: about?.features || [],
+                technologies: about?.technologies || [],
+                rating: about?.rating || 0,
+                review: about?.review || 0,
+                author: about?.author || "Anonymous",
             },
             imageUrl,
         });
@@ -29,7 +30,6 @@ const productController = {
             product,
         });
     } catch (error) {
-        console.log("here------------------");
         return res
         .status(HTTP_STATUS_CODES.CLIENT_ERROR.BAD_REQUEST)
         .json({ error: error.message });
